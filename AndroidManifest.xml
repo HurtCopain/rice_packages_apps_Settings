@@ -128,6 +128,8 @@
     <uses-permission android:name="com.android.settings.FACE_UNLOCK"/>
     <permission android:name="com.android.settings.FACE_UNLOCK" android:protectionLevel="signatureOrSystem"/>
 
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+
     <application
             android:name=".SettingsApplication"
             android:label="@string/settings_label"
@@ -4680,5 +4682,16 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.rice.settings.fragments.ui.SmartPixels" />
         </activity>
+        <receiver android:name="com.rice.settings.fragments.ui.doze.DozeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.rice.settings.fragments.ui.doze.DozeService"
+                android:exported="true"
+                android:permission="riceDozeService">
+        </service>
     </application>
 </manifest>
