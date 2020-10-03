@@ -171,5 +171,11 @@
     
     <string name="volume_style_title">Volume panel styles</string>
     <string name="my_device_settings">My device</string>
+    
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
+    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_restart_app">Please restart the application to apply the changes.</string>
 </resources>
 
