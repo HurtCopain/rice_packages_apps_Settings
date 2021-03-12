@@ -99,11 +99,11 @@
         android:title="@string/battery_charge_cycles"
         android:selectable="false" />
 
-    <com.rice.settings.preferences.SystemSettingSwitchPreference
-        android:key="sensor_block"
+    <Preference
+        android:key="sensor_block_settings"
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
-        android:defaultValue="false" />
+        android:fragment="com.android.settings.applications.sensors.SensorBlock"/>
 
     <com.android.settings.fuelgauge.PowerGaugePreference
         android:key="battery_temp"
