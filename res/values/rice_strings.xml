@@ -205,5 +205,7 @@
         Prevent this application from showing up in launcher. Requires a launcher restart for changes to take effect.
     </string>
 
+    <string name="search">Search</string>
+    <string name="search_apps">Search apps</string>
 </resources>
 
