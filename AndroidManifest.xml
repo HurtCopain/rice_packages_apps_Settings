@@ -4677,6 +4677,13 @@
                 android:exported="true"
                 android:permission="crDroidDozeService">
         </service>
+        
+        <!-- Face enroll -->
+        <activity android:theme="@style/SudThemeGlif.Light"
+                  android:name="com.android.settings.biometrics.face.FaceEnrollActivityDirector"
+                  android:exported="true"
+                  android:screenOrientation="portrait"/>
+                  
         <!-- Face unlock -->
         <activity android:name="com.android.settings.custom.biometrics.face.FaceEnrollActivity"
             android:permission="com.android.settings.FACE_UNLOCK"
