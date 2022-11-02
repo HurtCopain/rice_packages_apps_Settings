@@ -71,6 +71,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private static final String PREF_KEY_SUPPORT = "top_level_support";
     private static final String KEY_USER_CARD = "top_level_usercard";
     private int mDashBoardStyle;
+    private int mAboutPhoneStyle;
 
     private boolean mIsEmbeddingActivityEnabled;
     private TopLevelHighlightMixin mHighlightMixin;
@@ -122,6 +123,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
         HighlightableMenu.fromXml(context, getPreferenceScreenResId());
         use(SupportPreferenceController.class).setActivity(getActivity());
         setDashboardStyle(context);
+        getAboutPhoneStyle(context);
     }
 
     @Override
@@ -244,7 +246,6 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             } else if (key.equals("top_level_network")
             	|| key.equals("top_level_rice")
             	|| key.equals("top_level_apps")
-            	|| key.equals("top_level_system")
             	|| key.equals("top_level_accessibility")
             	|| key.equals("top_level_emergency")){
                 preference.setLayoutResource(R.layout.top_level_preference_top);
@@ -255,6 +256,25 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             	|| key.equals("top_level_storage")
             	|| key.equals("top_level_notifications")){
                 preference.setLayoutResource(R.layout.top_level_preference_middle);
+            } else if (key.equals("top_level_about_device")){
+            	if (mAboutPhoneStyle == 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_about);
+                preference.setOrder(-180);
+                } else if (mAboutPhoneStyle == 2) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_high);
+                preference.setOrder(-180);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_bottom);
+                preference.setOrder(20);
+                } 
+            } else if (key.equals("top_level_system")){
+            	if (mAboutPhoneStyle >= 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_middle);
+                preference.setOrder(-45);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_top);
+                preference.setOrder(10);
+                }
             } else if (key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")
             	|| key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.home.TopLevelSettingsActivity")
             	|| key.equals("top_level_wellbeing")){
@@ -277,7 +297,6 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             } else if (key.equals("top_level_network")
             	|| key.equals("top_level_rice")
             	|| key.equals("top_level_apps")
-            	|| key.equals("top_level_system")
             	|| key.equals("top_level_accessibility")
             	|| key.equals("top_level_emergency")){
                 preference.setLayoutResource(R.layout.top_level_preference_oos_top);
@@ -288,6 +307,25 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             	|| key.equals("top_level_storage")
             	|| key.equals("top_level_notifications")){
                 preference.setLayoutResource(R.layout.top_level_preference_oos_middle);
+            } else if (key.equals("top_level_about_device")){
+            	if (mAboutPhoneStyle == 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_round);
+                preference.setOrder(-180);
+                } else if (mAboutPhoneStyle == 2) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_high_round);
+                preference.setOrder(-180);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_oos_bottom);
+                preference.setOrder(20);
+                } 
+            } else if (key.equals("top_level_system")){
+            	if (mAboutPhoneStyle >= 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_oos_middle);
+                preference.setOrder(-45);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_oos_top);
+                preference.setOrder(10);
+                }
             } else if (key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")
             	|| key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.home.TopLevelSettingsActivity")
             	|| key.equals("top_level_wellbeing")){
@@ -312,6 +350,17 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             } else if (key.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")
             	|| key.equals("top_level_google")){
                 preference.setLayoutResource(R.layout.top_level_preference_google_arc);
+            } else if (key.equals("top_level_about_device")){
+            	if (mAboutPhoneStyle == 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_about);
+                preference.setOrder(-180);
+                } else if (mAboutPhoneStyle == 2) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_high);
+                preference.setOrder(-180);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_arc);
+                preference.setOrder(20);
+                } 
             } else if (key.equals("top_level_divider_one_rui")) {
             	// do nothing
             } else {
@@ -321,6 +370,16 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 	case 3:
 	    if (key.equals("top_level_usercard")){
 	        preference.setLayoutResource(R.layout.usercard_transparent);
+            } else if (key.equals("top_level_about_device")){
+            	if (mAboutPhoneStyle == 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_about);
+                preference.setOrder(-180);
+                } else if (mAboutPhoneStyle == 2) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_high);
+                preference.setOrder(-180);
+                } else {
+                preference.setOrder(20);
+                } 
             } else if (key.equals("top_level_divider_one_rui")) {
             	// do nothing
             }
@@ -331,7 +390,6 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             } else if (key.equals("top_level_network")
             	|| key.equals("top_level_rice")
             	|| key.equals("top_level_apps")
-            	|| key.equals("top_level_system")
             	|| key.equals("top_level_accessibility")
             	|| key.equals("top_level_emergency")){
                 preference.setLayoutResource(R.layout.top_level_preference_mt_top);
@@ -346,6 +404,25 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             	|| key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.home.TopLevelSettingsActivity")
             	|| key.equals("top_level_wellbeing")){
                 preference.setLayoutResource(R.layout.top_level_preference_wellbeing_mt);
+            } else if (key.equals("top_level_about_device")){
+            	if (mAboutPhoneStyle == 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_round);
+                preference.setOrder(-180);
+                } else if (mAboutPhoneStyle == 2) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_high_round);
+                preference.setOrder(-180);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_mt_bottom);
+                preference.setOrder(20);
+                }  
+            } else if (key.equals("top_level_system")){
+            	if (mAboutPhoneStyle >= 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_mt_middle);
+                preference.setOrder(-45);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_mt_top);
+                preference.setOrder(10);
+                }
             } else if (key.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")
             	|| key.equals("top_level_google")){
                 preference.setLayoutResource(R.layout.top_level_preference_google_mt);
@@ -360,11 +437,10 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             break;
 	case 5:
 	    if (key.equals("top_level_usercard")){
-	        preference.setLayoutResource(R.layout.usercard_round);
+	        preference.setLayoutResource(R.layout.usercard_round_circle);
             } else if (key.equals("top_level_network")
             	|| key.equals("top_level_rice")
             	|| key.equals("top_level_apps")
-            	|| key.equals("top_level_system")
             	|| key.equals("top_level_accessibility")
             	|| key.equals("top_level_emergency")){
                 preference.setLayoutResource(R.layout.top_level_preference_top_card);
@@ -383,6 +459,25 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             	|| key.equals("top_level_google")){
                 preference.setLayoutResource(R.layout.top_level_preference_google_card);
                 gAppsExists = true;
+            } else if (key.equals("top_level_about_device")){
+            	if (mAboutPhoneStyle == 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_round_circle);
+                preference.setOrder(-180);
+                } else if (mAboutPhoneStyle == 2) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_high_round_circle);
+                preference.setOrder(-180);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_bottom_card);
+                preference.setOrder(20);
+                }          
+            } else if (key.equals("top_level_system")){
+            	if (mAboutPhoneStyle >= 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_middle_card);
+                preference.setOrder(-45);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_top_card);
+                preference.setOrder(10);
+                }
             } else if (key.equals("top_level_accounts") && gAppsExists){
                 preference.setLayoutResource(R.layout.top_level_preference_middle_card);
             } else {
@@ -608,5 +703,10 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private void setDashboardStyle(Context context) {
         mDashBoardStyle = Settings.System.getIntForUser(context.getContentResolver(),
                     Settings.System.SETTINGS_DASHBOARD_STYLE, 0, UserHandle.USER_CURRENT);
+    }
+    
+    private void getAboutPhoneStyle(Context context) {
+        mAboutPhoneStyle = Settings.System.getIntForUser(context.getContentResolver(),
+                    "about_card_style", 0, UserHandle.USER_CURRENT);
     }
 }
