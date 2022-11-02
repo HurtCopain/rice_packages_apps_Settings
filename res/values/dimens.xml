@@ -119,8 +119,8 @@
 
     <!-- Search bar -->
     <dimen name="search_bar_margin">16dp</dimen>
-    <dimen name="search_bar_height">40dp</dimen>
-    <dimen name="search_bar_text_size">14sp</dimen>
+    <dimen name="search_bar_height">52dp</dimen>
+    <dimen name="search_bar_text_size">20sp</dimen>
     <dimen name="search_bar_corner_radius">28dp</dimen>
     <dimen name="search_bar_content_inset">56dp</dimen>
     <dimen name="search_bar_padding_start">4dp</dimen>
@@ -509,8 +509,8 @@
     <dimen name="op_control_icon_size_indicator">24.0dip</dimen>
     <dimen name="dashboard_tile_foreground_image_size_op">21.0dip</dimen>
     <!-- Card Layout OOS -->
-    <dimen name="card_margin_start">16.0dp</dimen>
-    <dimen name="card_margin_end">16.0dp</dimen>
+    <dimen name="card_margin_start">20.0dp</dimen>
+    <dimen name="card_margin_end">20.0dp</dimen>
     <dimen name="card_margin_rui_start">38.0dp</dimen>
     <dimen name="card_margin_rui_end">24.0dp</dimen>
     <dimen name="card_padding_end">70.0dp</dimen>

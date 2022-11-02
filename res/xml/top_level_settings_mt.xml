@@ -25,8 +25,8 @@
         android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
         android:icon="@drawable/ic_rui_homepage_about"
         android:key="top_level_about_device"
-        android:order="-180"
-        android:title="@string/my_device_settings"
+        android:order="20"
+        android:title="@string/about_settings"
         android:summary="@string/summary_placeholder"
         settings:highlightableMenuKey="@string/menu_key_about_device"
         settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>
@@ -156,7 +156,7 @@
         android:fragment="com.android.settings.system.SystemDashboardFragment"
         android:icon="@drawable/ic_homepage_system_dashboard_rui"
         android:key="top_level_system"
-        android:order="-45"
+        android:order="10"
         android:title="@string/header_category_system"
         android:summary="@string/system_dashboard_summary"
         settings:highlightableMenuKey="@string/menu_key_system"/>
