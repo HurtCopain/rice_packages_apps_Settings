@@ -23,6 +23,8 @@
             android:gravity="center"
             android:elevation="0dp"
             android:contentDescription="@null"
+            android:foreground="@drawable/wallpaper_scrim"
+            android:background="@drawable/wallpaper_scrim"
             android:orientation="horizontal" />
   
     <LinearLayout
