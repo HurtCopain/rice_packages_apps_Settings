@@ -44,6 +44,8 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.window.embedding.SplitController;
 
 import com.android.settings.R;
@@ -102,6 +104,8 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                return R.xml.top_level_settings_mt;
 	   case 5:
                return R.xml.top_level_settings_card;
+	   case 6:
+               return R.xml.top_level_settings_grid;
            default:
                return R.xml.top_level_settings;
         }
@@ -234,6 +238,8 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private void onSetPrefCard() {
 	final PreferenceScreen screen = getPreferenceScreen();
         final int count = screen.getPreferenceCount();
+        final boolean DisableUserCard = Settings.System.getIntForUser(getContext().getContentResolver(),
+                "hide_user_card", 0, UserHandle.USER_CURRENT) != 0;
         for (int i = 0; i < count; i++) {
 
             final Preference preference = screen.getPreference(i);
@@ -484,6 +490,31 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                 preference.setLayoutResource(R.layout.top_level_preference_bottom_card);
             }
             break;
+	case 6:
+	    if (key.equals("top_level_usercard")){
+	        preference.setLayoutResource(R.layout.usercard_round_grid);
+	    } else if (key.equals("top_level_divider_one")){
+                // nothing to do here
+            } else if (key.toLowerCase().contains("wellbeing")) {
+                preference.setLayoutResource(R.layout.top_level_preference_grid_wb);
+            } else if (key.toLowerCase().contains("level_google")
+            	|| key.toLowerCase().contains("GoogleSettings") 
+            	&& DisableUserCard) {
+                preference.setLayoutResource(R.layout.top_level_preference_grid_gms);
+            } else if (key.equals("top_level_about_device")) {
+            	if (mAboutPhoneStyle == 1) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_round_grid);
+                preference.setOrder(-180);
+                } else if (mAboutPhoneStyle == 2) {
+                preference.setLayoutResource(R.layout.top_level_preference_about_high_round_grid);
+                preference.setOrder(-180);
+                } else {
+                preference.setLayoutResource(R.layout.top_level_preference_grid);
+                preference.setOrder(20);
+                } 
+            } else {
+                preference.setLayoutResource(R.layout.top_level_preference_grid);
+            }
         default:
             break;
         }
@@ -517,7 +548,17 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             Bundle savedInstanceState) {
         RecyclerView recyclerView = super.onCreateRecyclerView(inflater, parent,
                 savedInstanceState);
+        if (mDashBoardStyle == 6) {
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(staggeredGridLayoutManager);
+        int startPadding = getResources().getDimensionPixelSize(
+                    R.dimen.grid_side_paddings);
+        int internalPadding = getResources().getDimensionPixelSize(
+                    R.dimen.grid_pref_internal_margin);
+        recyclerView.setPadding(startPadding, internalPadding, 0, 0);
+        } else {
         recyclerView.setPadding(mPaddingHorizontal, 0, mPaddingHorizontal, 0);
+        }
         return recyclerView;
     }
 

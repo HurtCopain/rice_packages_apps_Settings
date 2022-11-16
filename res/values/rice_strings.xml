@@ -21,7 +21,7 @@
     <string name="rice_build_version_title">Build Version</string>
     <string name="rice_build_date_title">Build Date</string>
         
-    <string name="wellbeing_title">Google Wellbeing</string>
+    <string name="wellbeing_title">Wellbeing</string>
     <string name="gesture_illustration_description">Control your device with ease.</string>
     <string name="connected_setting_description">Manage your device\'s connections.</string>
     <string name="accessibility_illustration_description">Ease of access features for everyone.</string>

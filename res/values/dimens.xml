@@ -528,4 +528,19 @@
 
     <dimen name="default_margin">16dp</dimen>
     <dimen name="default_padding">16dp</dimen>
+    
+    <!-- Grid layout dimensions -->
+    <dimen name="grid_side_paddings">20dp</dimen>
+    <dimen name="grid_pref_width">180dp</dimen>
+    <dimen name="grid_pref_height">140dp</dimen>
+    <dimen name="grid_pref_start">20dp</dimen>
+    <dimen name="grid_title_width_size">115dp</dimen>
+    <dimen name="grid_summary_width_size">105dp</dimen>
+    <dimen name="grid_icon_top_margin">20dp</dimen>
+    <dimen name="grid_pref_side_margin">10dp</dimen>
+    <dimen name="grid_pref_internal_margin">10dp</dimen>
+    <dimen name="grid_title_text_size">12sp</dimen>
+    <dimen name="grid_summary_text_size">10sp</dimen>
+    <dimen name="grid_arrow_margin">58dp</dimen>
+    <dimen name="grid_arrow_top_margin">29dp</dimen>
 </resources>
