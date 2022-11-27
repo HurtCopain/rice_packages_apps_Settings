@@ -26,6 +26,12 @@
         android:summary="@string/sensor_block_summary"
         android:defaultValue="false" />
 
+    <com.rice.settings.preferences.SystemSettingSwitchPreference
+        android:key="full_sensor_block"
+        android:title="@string/full_sensor_block_title"
+        android:summary="@string/full_sensor_block_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:title="@string/sensor_block_app_picker_title"
         android:key="sensor_block_applications">

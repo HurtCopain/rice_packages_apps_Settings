@@ -227,6 +227,8 @@
 
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Block sensors</string>
+    <string name="full_sensor_block_title">Block all sensors access</string>
+    <string name="full_sensor_block_summary">Selectively deny apps from having any kind of sensor access</string>
     <string name="sensor_block_summary">Selectively block apps from accessing certain battery draining sensors</string>
     <string name="sensor_block_app_picker_title">Block sensors for these apps</string>
     <string name="add_sensor_block_package_title">Add apps for Sensor block</string>

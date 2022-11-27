@@ -149,14 +149,6 @@ public class SensorBlock extends SettingsPreferenceFragment
         return dialog;
     }
 
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SENSOR_BLOCK, 0, UserHandle.USER_CURRENT);
-        Settings.System.putString(resolver,
-                Settings.System.SENSOR_BLOCKED_APP, null);
-    }
-
     /**
      * Application class
      */
