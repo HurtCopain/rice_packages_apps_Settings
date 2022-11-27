@@ -34,6 +34,8 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -48,13 +50,34 @@ import java.util.List;
 import java.util.ArrayList;
 
 @SearchIndexable
-public class Scarlet extends SettingsPreferenceFragment {
+public class Scarlet extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+
+    private static final String SYSTEM_BOOST = "scarlet_system_boost";
+    
+    private SwitchPreference mSboost;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.scarlet_settings);
+        
+	Context mContext = getActivity().getApplicationContext();
+	ContentResolver resolver = mContext.getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mSboost = (SwitchPreference)
+                    prefScreen.findPreference(SYSTEM_BOOST);
+        mSboost.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mSboost) {
+            RiceUtils.showSystemRestartDialog(getContext());
+            return true;
+        }
+        return false;
     }
 
     @Override

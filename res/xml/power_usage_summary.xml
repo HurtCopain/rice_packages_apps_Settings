@@ -107,8 +107,8 @@
 
     <Preference
         android:key="scarlet_settings"
-        android:title="@string/idle_manager_title"
-        android:summary="@string/idle_manager_pref_summary"
+        android:title="@string/scarlet_services_title"
+        android:summary="@string/system_manager_summary"
         android:fragment="com.android.settings.fuelgauge.scarlet.Scarlet" />
 
     <Preference

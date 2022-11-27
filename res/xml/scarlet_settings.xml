@@ -20,54 +20,63 @@
     android:title="@string/scarlet_services_title">
 
     <com.rice.settings.preferences.SystemSettingSwitchPreference
-        android:key="scarlet_idle_assistant_manager"
-        android:title="@string/idle_manager_title"
-        android:summary="@string/idle_manager_summary"
+        android:key="scarlet_system_manager"
+        android:title="@string/system_manager_title"
+        android:summary="@string/system_manager_summary"
         android:defaultValue="false" />
+        
 
     <PreferenceCategory
         android:key="scarlet_advanced"
         android:title="@string/scarlet_advanced_settings_title">
 
+        <com.rice.settings.preferences.SystemSettingSwitchPreference
+            android:key="scarlet_system_boost"
+            android:title="@string/scarlet_system_boost_title"
+             android:summary="@string/scarlet_system_boost_summary"
+            android:dependency="scarlet_system_manager"
+            android:defaultValue="false" />
+
         <com.rice.settings.preferences.SecureSettingSwitchPreference
-            android:key="scarlet_aggressive_mode"
+            android:key="scarlet_aggressive_idle_mode"
             android:title="@string/scarlet_aggressive_title"
-            android:dependency="scarlet_idle_assistant_manager"
+             android:summary="@string/scarlet_aggressive_summary"
+            android:dependency="scarlet_system_manager"
             android:defaultValue="false" />
 
         <com.rice.settings.preferences.SecureSettingSwitchPreference
-            android:key="scarlet_aggressive_mode_wifi_toggle"
-            android:title="@string/scarlet_aggressive_mode_wifi_toggle_title"
-            android:summary="@string/scarlet_aggressive_mode_wifi_toggle_summary"
-            android:dependency="scarlet_aggressive_mode"
+            android:key="scarlet_aggressive_idle_mode_wifi_toggle"
+            android:title="@string/scarlet_aggressive_idle_mode_wifi_toggle_title"
+            android:summary="@string/scarlet_aggressive_idle_mode_wifi_toggle_summary"
+            android:dependency="scarlet_aggressive_idle_mode"
             android:defaultValue="false" />
 
         <com.rice.settings.preferences.SecureSettingSwitchPreference
-            android:key="scarlet_aggressive_mode_bluetooth_toggle"
-            android:title="@string/scarlet_aggressive_mode_bluetooth_toggle_title"
-            android:summary="@string/scarlet_aggressive_mode_bluetooth_toggle_summary"
-            android:dependency="scarlet_aggressive_mode"
+            android:key="scarlet_aggressive_idle_mode_bluetooth_toggle"
+            android:title="@string/scarlet_aggressive_idle_mode_bluetooth_toggle_title"
+            android:summary="@string/scarlet_aggressive_idle_mode_bluetooth_toggle_summary"
+            android:dependency="scarlet_aggressive_idle_mode"
             android:defaultValue="false" />
 
         <com.rice.settings.preferences.SecureSettingSwitchPreference
-            android:key="scarlet_aggressive_mode_cellular_toggle"
-            android:title="@string/scarlet_aggressive_mode_cellular_toggle_title"
-            android:summary="@string/scarlet_aggressive_mode_cellular_toggle_summary"
-            android:dependency="scarlet_aggressive_mode"
+            android:key="scarlet_aggressive_idle_mode_cellular_toggle"
+            android:title="@string/scarlet_aggressive_idle_mode_cellular_toggle_title"
+            android:summary="@string/scarlet_aggressive_idle_mode_cellular_toggle_summary"
+            android:dependency="scarlet_aggressive_idle_mode"
             android:defaultValue="false" />
 
         <com.rice.settings.preferences.SecureSettingSwitchPreference
-            android:key="scarlet_aggressive_mode_location_toggle"
-            android:title="@string/scarlet_aggressive_mode_location_toggle_title"
-            android:summary="@string/scarlet_aggressive_mode_location_toggle_summary"
-            android:dependency="scarlet_aggressive_mode"
+            android:key="scarlet_aggressive_idle_mode_location_toggle"
+            android:title="@string/scarlet_aggressive_idle_mode_location_toggle_title"
+            android:summary="@string/scarlet_aggressive_idle_mode_location_toggle_summary"
+            android:dependency="scarlet_aggressive_idle_mode"
             android:defaultValue="false" />
 
         <com.rice.settings.preferences.SecureSettingSwitchPreference
-            android:key="scarlet_aggressive_mode_sensors_toggle"
-            android:title="@string/scarlet_aggressive_mode_sensors_toggle_title"
-            android:summary="@string/scarlet_aggressive_mode_sensors_toggle_summary"
-            android:dependency="scarlet_aggressive_mode"
+            android:key="scarlet_aggressive_idle_mode_sensors_toggle"
+            android:title="@string/scarlet_aggressive_idle_mode_sensors_toggle_title"
+            android:summary="@string/scarlet_aggressive_idle_mode_sensors_toggle_summary"
+            android:dependency="scarlet_aggressive_idle_mode"
             android:defaultValue="false" />
 
     </PreferenceCategory>
