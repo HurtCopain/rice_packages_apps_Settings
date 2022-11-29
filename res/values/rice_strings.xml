@@ -262,28 +262,6 @@
     <string name="sleep_mode_sensors_toggle_title">Turn off Sensors</string>
     <string name="sleep_mode_sensors_toggle_summary">Disable Sensors when Sleep mode is turned on</string>
     <string name="sleep_mode_display_text">Sleep mode allows you to disable certain services to help save battery and silence your phone while you sleep.</string>
-    
-    <!-- Scarlet System Manager -->
-    <string name="scarlet_services_title">Scarlet services</string>
-    <string name="system_manager_title">Scarlet System Manager</string>
-    <string name="system_manager_pref_summary">Enable scarlet system manager services</string>
-    <string name="system_manager_summary">All-in-one solution for optimizing device\'s performance and power consumption.</string>
-    <string name="scarlet_system_boost_title">Scarlet System Boost</string>
-    <string name="scarlet_system_boost_summary">Scarlet System Boost service will boost device\'s resources for sustained performance</string>
-    <string name="scarlet_aggressive_title">Scarlet Aggressive Idle mode</string>
-    <string name="scarlet_aggressive_summary">Scarlet Aggressive Idle mode service will aggressively optimize device\'s power consumption after entering idle state</string>
-    <string name="scarlet_advanced_settings_title">Scarlet system manager advanced settings</string>
-    <string name="scarlet_aggressive_idle_mode_wifi_toggle_title">Turn off Wi-Fi</string>
-    <string name="scarlet_aggressive_idle_mode_wifi_toggle_summary">Disable Wi-Fi when Scarlet\'s aggressive idle mode is enabled</string>
-    <string name="scarlet_aggressive_idle_mode_bluetooth_toggle_title">Turn off Bluetooth</string>
-    <string name="scarlet_aggressive_idle_mode_bluetooth_toggle_summary">Disable Bluetooth when Scarlet\'s aggressive idle mode is enabled</string>
-    <string name="scarlet_aggressive_idle_mode_cellular_toggle_title">Turn off Mobile data</string>
-    <string name="scarlet_aggressive_idle_mode_cellular_toggle_summary">Disable Mobile data when Scarlet\'s aggressive idle mode is enabled</string>
-    <string name="scarlet_aggressive_idle_mode_location_toggle_title">Turn off Location</string>
-    <string name="scarlet_aggressive_idle_mode_location_toggle_summary">Disable Location when Scarlet\'s aggressive idle mode is enabled</string>
-    <string name="scarlet_aggressive_idle_mode_sensors_toggle_title">Turn off Sensors</string>
-    <string name="scarlet_aggressive_idle_mode_sensors_toggle_summary">Disable Sensors when Scarlet\'s aggressive idle mode is enabled</string>
-    <string name="scarlet_manager_display_text">Scarlet\'s aggressive mode will disable selected system services when device screen is off to conserve power consupmtion.</string>
 
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Always on display schedule</string>

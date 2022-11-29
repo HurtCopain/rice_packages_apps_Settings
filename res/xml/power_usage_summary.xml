@@ -99,23 +99,6 @@
         android:title="@string/battery_charge_cycles"
         android:selectable="false" />
 
-    <Preference
-        android:key="sensor_block_settings"
-        android:title="@string/sensor_block_title"
-        android:summary="@string/sensor_block_summary"
-        android:fragment="com.android.settings.applications.sensors.SensorBlock"/>
-
-    <Preference
-        android:key="scarlet_settings"
-        android:title="@string/scarlet_services_title"
-        android:summary="@string/system_manager_summary"
-        android:fragment="com.android.settings.fuelgauge.scarlet.Scarlet" />
-
-    <Preference
-        android:key="sleep_mode"
-        android:title="@string/sleep_mode_title"
-        android:fragment="com.android.settings.fuelgauge.sleepmode.SleepMode" />
-
     <com.android.settings.fuelgauge.PowerGaugePreference
         android:key="battery_temp"
         android:title="@string/battery_temp"
