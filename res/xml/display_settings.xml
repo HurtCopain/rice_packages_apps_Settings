@@ -105,11 +105,12 @@
             Standard auto-rotation preference that will be shown when device state based
             auto-rotation settings are NOT available.
           -->
-        <SwitchPreference
+        <Preference
             android:key="auto_rotate"
             android:title="@string/accelerometer_title"
+            android:fragment="com.android.settings.display.SmartAutoRotatePreferenceFragment"
             settings:keywords="@string/keywords_auto_rotate"
-            settings:controller="com.android.settings.display.AutoRotatePreferenceController"/>
+            settings:controller="com.android.settings.display.SmartAutoRotatePreferenceController"/>
 
         <lineageos.preference.LineagePartsPreference
             android:key="rotation"
@@ -145,6 +146,12 @@
             android:key="peak_refresh_rate"
             android:title="@string/peak_refresh_rate_title"
             settings:controller="com.android.settings.display.PeakRefreshRatePreferenceController"/>
+
+        <SwitchPreference
+            android:key="touch_sensitivity"
+            android:title="@string/touch_sensitivity_title"
+            android:summary="@string/touch_sensitivity_summary"
+            settings:controller="com.android.settings.display.TouchSensitivityPreferenceController" />
 
         <SwitchPreference
             android:key="show_operator_name"
